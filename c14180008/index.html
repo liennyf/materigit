@@ -10,6 +10,26 @@
             <h5>c14180008 - Lienny Ferlinda</h5> 
             <h5>UX</h5>
             <h5>Aplikasi untuk Promosi Event</h5>
+            <form>
+                <label for="date">Date 1:</label>
+                <input type="date" id="dateInput" class="form-control" name="dateInput"><br>
+
+                <label for="date">Date 2:</label>
+                <input type="date" id="dateInput2" class="form-control" name="dateInput2"><br>
+
+                <button type="submit" class="btn btn-primary" onclick="checkDifference()">Submit</button>
+            </form>
         </div>
+        <script>
+            function checkDifference(){
+                const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+                const firstDate = new Date(document.getElementById('dateInput').value);
+                const secondDate = new Date(document.getElementById('dateInput2').value);
+
+                const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+
+                alert(diffDays);
+            }
+        </script>
     </body>
 </html>
