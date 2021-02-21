@@ -12,14 +12,17 @@
                 <label for="date">Date 1:</label>
                 <input type="date" id="dateInput" class="form-control" name="dateInput"><br>
 
+                <label for="date">Date 2:</label>
+                <input type="date" id="dateInput2" class="form-control" name="dateInput2"><br>
+
                 <button type="submit" class="btn btn-primary" onclick="checkDifference()">Submit</button>
             </form>
         </div>
         <script>
             function checkDifference(){
                 const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-                const firstDate = new Date();
-                const secondDate = new Date(document.getElementById('dateInput').value);
+                const firstDate = new Date(document.getElementById('dateInput').value);
+                const secondDate = new Date(document.getElementById('dateInput2').value);
 
                 const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
 
