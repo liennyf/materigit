@@ -8,6 +8,23 @@
     <body>
         <div class="col-md-6 offset-md-3">
             <h5>c14180008 - Lienny Ferlinda</h5> 
+            <form>
+                <label for="date">Date 1:</label>
+                <input type="date" id="dateInput" class="form-control" name="dateInput"><br>
+
+                <button type="submit" class="btn btn-primary" onclick="checkDifference()">Submit</button>
+            </form>
         </div>
+        <script>
+            function checkDifference(){
+                const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+                const firstDate = new Date();
+                const secondDate = new Date(document.getElementById('dateInput').value);
+
+                const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+
+                alert(diffDays);
+            }
+        </script>
     </body>
 </html>
